@@ -10,4 +10,7 @@ router.get('/login', function(req, res, next) {
   res.render('login.html');
 });
 
+router.get('/phpmyadmin', function(req, res, next) {
+});
+
 module.exports = router;
