@@ -21,7 +21,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/public', express.static(path.join(__dirname, '../frontend/public')));
+app.use('/vendor', express.static(path.join(__dirname, '../frontend/views/vendor')));
+app.use('/css', express.static(path.join(__dirname, '../frontend/views/css')));
+app.use('/js', express.static(path.join(__dirname, '../frontend/views/js')));
+app.use('/scss', express.static(path.join(__dirname, '../frontend/views/scss')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
