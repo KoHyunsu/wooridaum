@@ -1,116 +1,71 @@
-<style>
-.member {
- font-size: 50px;
- text-shadow: 0 0 10px #666;
- color: #fff;
- margin: 0 auto;
- text-align: center;
- text-transform: capitalize;
- font-family: "맑은 고딕";
- font-style: italic;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-body {
- font-family: "맑은 고딕";
- font-size: 12px;
-}
+  <head>
 
-.form {
- width: 498px;
- height: 300px;
- border-radius: 25px;
- border: 5px double #999;
- margin: 30px auto;
-}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-.form2 {
- width: 380px;
- min-width: 320px;
- height: 200px;
- margin: 60px auto;
- margin-left:20px;
-}
+    <title>SB Admin - Login</title>
 
-.form3 {
- float: left;
- /*   background:#f00;  */
-}
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-.form3 label {
- width: 100px;
- height: 20px;
- /*  display: block; */
- float: left;
-}
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-.form4 {
- padding: 0px 0px 0px 70px;
-}
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
 
-#wrap {
- width: 600px;
- height: 500px;
- margin: 0 auto;
-}
+  </head>
 
-.clear {
- clear: both;
-}
+  <body class="bg-dark">
 
-input[type="submit"] {
- float: left;
- /*  display:block; */
- height: 50px;
- background: #FFBB00;
- border-radius: 5px;
- border: none;
- font-family: "맑은 고딕";
-}
-input[type="button"] {
- height: 30px;
- background: gray;
- border-radius: 5px;
-/*  width: 140px; */
- font-family:"맑은 고딕";
- margin-top:10px;
- margin-right:20px;
-}
-input[type="checkbox"] {
- margin-top:20px;
-}
-</style>
-
-<body>
-  <div class="demo">
-    <form class="login" ng-controller="LoginController as login">
-      <!--
-      <div class="login__check"></div>
-      -->
-      <div class="login__image">
-        <img src ="wwdlogo.png" style=" width: 30%; height: auto; margin: 0 auto;">
-    
-      </div>
-
-      <form>
-            <div id="wrap">
-             <h1 class="member">Wooridaum login</h1>
-             <div class="form">
-              <div class="form2">
-               <div class="form3">
-                <label for="user">아이디</label><input type="text" id="user">
-                <div class="clear"></div>
-                <label for="user">비밀번호</label><input type="password" id="user">
-               </div>
-               <input type="submit" value="로그인하기">
-               <div class="clear"></div>
-               <div class="form4">
-                <label><input type="checkbox">아이디저장</label> <label><input
-                 type="checkbox">보안접속</label>
-                <div class="clear"></div>
-                <label><input type="button" value="회원가입"></label> <label><input
-                 type="button" value="아이디/비밀번호 찾기"></label>
-               </div>
+    <div class="container">
+      <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Login</div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
+                <label for="inputEmail">Email address</label>
               </div>
-             </div>
             </div>
-        </form>
+            <div class="form-group">
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+                <label for="inputPassword">Password</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="remember-me">
+                  Remember Password
+                </label>
+              </div>
+            </div>
+            <a class="btn btn-primary btn-block" href="index.html">Login</a>
+          </form>
+          <div class="text-center">
+            <a class="d-block small mt-3" href="register.html">Register an Account</a>
+            <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  </body>
+
+</html>
