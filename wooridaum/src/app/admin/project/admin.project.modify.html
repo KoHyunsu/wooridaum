@@ -1,0 +1,29 @@
+<div ng-controller="AdminProjectController as adminproject">
+  <div ng-init="adminproject.initModify()">
+    <form ng-submit="adminproject.modify()">
+      <md-card>
+        <div>
+          <h2>Name</h2>
+          <input type="text" value="{{adminproject.project.name}}" ng-model="adminproject.project.name">
+          <hr>
+        </div>
+        <div>
+          <h2>Startdate</h2>
+          <input type="date" class="" ng-model="adminproject.project.startdate" value={{adminproject.strconvert(adminproject.project.startdate).slice(0,10)}}>
+          <hr>
+        </div>
+        <div>
+          <h2>Duedate</h2>
+          <input type="date" class="" ng-model="adminproject.project.duedate" value={{adminproject.strconvert(adminproject.project.duedate).slice(0,10)}}>
+          <hr>
+        </div>
+        <div>
+          <h2>PM</h2>
+          <select ng-model="adminproject.pmSelected" ng-options="user for user in adminproject.pmSelect">
+          </select>
+        </div>
+        <md-button type="submit" class="md-raised"><i class="fa fa-edit">Edit Project</i></md-button>
+      </md-card>
+    </form>
+  </div>
+</div>
