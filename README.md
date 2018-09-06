@@ -2,10 +2,14 @@
 
 
 change directory:
-     > cd wooridaum
+     > cd wooridaum/wooridaum
 
    install dependencies:
      > npm install
 
    run the app:
-     > SET DEBUG=wooridaum:* & npm start
+    in window
+     > set DEBUG=wooridaum:* && npm start
+
+    in ubuntu
+     > DEBUG=wooridaum:* npm start
