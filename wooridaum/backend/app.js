@@ -27,6 +27,7 @@ app.use('/vendor', express.static(path.join(__dirname, '../frontend/views/vendor
 app.use('/css', express.static(path.join(__dirname, '../frontend/views/css')));
 app.use('/js', express.static(path.join(__dirname, '../frontend/views/js')));
 app.use('/scss', express.static(path.join(__dirname, '../frontend/views/scss')));
+app.use('/img', express.static(path.join(__dirname, '../frontend/views/img')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

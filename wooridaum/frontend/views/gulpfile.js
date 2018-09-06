@@ -4,7 +4,6 @@ var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
-var autoprefixer = require('gulp-autoprefixer');
 var pkg = require('./package.json');
 var browserSync = require('browser-sync').create();
 
@@ -14,7 +13,7 @@ var banner = ['/*!\n',
   ' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
   ' * Licensed under <%= pkg.license %> (https://github.com/BlackrockDigital/<%= pkg.name %>/blob/master/LICENSE)\n',
   ' */\n',
-  '\n'
+  ''
 ].join('');
 
 // Copy third party libraries from /node_modules into /vendor
@@ -28,25 +27,15 @@ gulp.task('vendor', function() {
     ])
     .pipe(gulp.dest('./vendor/bootstrap'))
 
-  // ChartJS
-  gulp.src([
-      './node_modules/chart.js/dist/*.js'
-    ])
-    .pipe(gulp.dest('./vendor/chart.js'))
-
-  // DataTables
-  gulp.src([
-      './node_modules/datatables.net/js/*.js',
-      './node_modules/datatables.net-bs4/js/*.js',
-      './node_modules/datatables.net-bs4/css/*.css'
-    ])
-    .pipe(gulp.dest('./vendor/datatables/'))
-
   // Font Awesome
   gulp.src([
-      './node_modules/@fortawesome/**/*',
+      './node_modules/font-awesome/**/*',
+      '!./node_modules/font-awesome/{less,less/*}',
+      '!./node_modules/font-awesome/{scss,scss/*}',
+      '!./node_modules/font-awesome/.*',
+      '!./node_modules/font-awesome/*.{txt,json,md}'
     ])
-    .pipe(gulp.dest('./vendor'))
+    .pipe(gulp.dest('./vendor/font-awesome'))
 
   // jQuery
   gulp.src([
@@ -61,6 +50,18 @@ gulp.task('vendor', function() {
     ])
     .pipe(gulp.dest('./vendor/jquery-easing'))
 
+  // Magnific Popup
+  gulp.src([
+      './node_modules/magnific-popup/dist/*'
+    ])
+    .pipe(gulp.dest('./vendor/magnific-popup'))
+
+  // Scrollreveal
+  gulp.src([
+      './node_modules/scrollreveal/dist/*.js'
+    ])
+    .pipe(gulp.dest('./vendor/scrollreveal'))
+
 });
 
 // Compile SCSS
@@ -69,15 +70,7 @@ gulp.task('css:compile', function() {
     .pipe(sass.sync({
       outputStyle: 'expanded'
     }).on('error', sass.logError))
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
-    .pipe(header(banner, {
-      pkg: pkg
-    }))
     .pipe(gulp.dest('./css'))
-    .pipe(browserSync.stream());
 });
 
 // Minify CSS
@@ -106,9 +99,6 @@ gulp.task('js:minify', function() {
     .pipe(uglify())
     .pipe(rename({
       suffix: '.min'
-    }))
-    .pipe(header(banner, {
-      pkg: pkg
     }))
     .pipe(gulp.dest('./js'))
     .pipe(browserSync.stream());
