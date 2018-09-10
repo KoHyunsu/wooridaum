@@ -51,6 +51,10 @@ h6 {
 }
 
 section {
+  padding: 3rem 0;
+}
+
+#about {
   padding: 8rem 0;
 }
 
@@ -198,7 +202,7 @@ header.masthead p {
 
 @media (min-width: 992px) {
   header.masthead {
-    height: 100vh;
+    height: 650px;
     min-height: 650px;
     padding-top: 0;
     padding-bottom: 0;
@@ -310,3 +314,195 @@ header.masthead p {
 .btn-primary:active, .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
 }
+
+.team-info-content {
+  background-color: #FFF;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.team-info-content img {
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.team-info-content:before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/*.team-info-content:hover:before {
+  background-color: rgba(0, 0, 0, 0.8);
+}*/
+
+.team-info-content:hover .view-caption {
+  -moz-transform: translateY(0%) scale(1);
+  -o-transform: translateY(0%) scale(1);
+  -ms-transform: translateY(0%) scale(1);
+  -webkit-transform: translateY(0%) scale(1);
+  transform: translateY(0%) scale(1);
+}
+
+.view-caption {
+  background-color: #0ebeff;
+  bottom: 0;
+  height: 20%;
+  left: 0;
+  padding: 16px 20px;
+  position: absolute;
+  right: 0;
+  z-index: 99;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -moz-transform: translateY(150%) scale(1.5);
+  -o-transform: translateY(150%) scale(1.5);
+  -ms-transform: translateY(150%) scale(1.5);
+  -webkit-transform: translateY(150%) scale(1.5);
+  transform: translateY(150%) scale(1.5);
+}
+
+.view-caption .team-description h4 {
+  color: #000;
+  font-size: 1.5em;
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+.view-caption .team-description p {
+  color: #000;
+  font-size: 1em;
+}
+
+.view-caption ul li {
+  display: inline-block;
+  list-style: none;
+}
+
+.view-caption ul.social-icons li a {
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -moz-border-radius: 50%;
+  color: #ec1c24;
+  display: inline-block;
+  height: 28px;
+  text-align: center;
+  line-height: 25px;
+  width: 28px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  font-size: 0.8em;
+}
+
+.view-caption ul.social-icons li a:hover {
+  opacity: 0.8;
+}
+
+.team-description h4 {
+  font-size: 1.1em;
+}
+
+.team-info-content .img-fluid {
+  width: 254px;
+  height: 254px;
+}
+
+.rcarousel-control-prev,
+.rcarousel-control-next {
+  margin: 240px auto;
+}
+
+.rcarousel-control-prev:hover,
+.rcarousel-control-next:hover {
+  color: none;
+  text-decoration: none;
+}
+
+
+.qcarousel-control-prev,
+.qcarousel-control-next {
+  margin: 90px auto;
+}
+
+.qcarousel-control-prev:hover,
+.qcarousel-control-next:hover {
+  color: none;
+  text-decoration: none;
+}
+
+.carousel-control-prev-text,
+.carousel-control-next-text {
+  font-size: 55px;
+  text-align: center;
+  margin: auto auto
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: tomato;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: tomato;
+}
+
+.teamBox {
+  margin: 0px;
+}
+
+/*@media (min-width: 1200px) {
+.container {
+    max-width: 1740px;
+} }
+@media (min-width: 992px) {
+.container {
+    max-width: 1560px;
+} }
+@media (min-width: 768px) {
+.container {
+    max-width: 1320px;
+} }
+@media (min-width: 576px) {
+.container {
+    max-width: 1140px;
+} }*/
